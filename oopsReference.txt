@@ -1,0 +1,80 @@
+// DRY -> do not reapeat yourself
+
+struct vs claases
+   ->classes provide more security ..private and public 
+   -> in classes, function can be declared but on in struct  
+
+
+    OOPs - Classes and objects
+
+ // C++ --> initially called --> C with classes by stroustroup
+  //class --> extension of structures (in C)
+ //structures had limitations
+      - members are public 
+      - No methods
+ //classes --> structures + more
+ //classes --> can have methods and properties
+ //classes --> can make few members as private & few as public
+ //structures in C++ are typedefed
+ //you can declare objects along with the class declarion like this:
+       /* class Employee{
+             Class definition
+        } harry, rohan, lovish; */
+// harry.salary = 8 makes no sense if salary is private
+
+// Nesting of member functions
+
+ Characterictics of constructor
+ Constructor is a special member function with the same name as of the class
+    // It is used to inintialize the objects of its class
+// 1. the constructor which does not take any parameter is known as default constructor
+// 2. It should be declared in the public section of the class
+// 3. They are automatically invoked whenever object is created
+// 4. They can not return values and Do not have return types
+// 5. It can have default arguments
+// 6. We can not refer to their address
+
+32.static int no_of_objects; //in class
+//static variable initial value is 0 
+//can't define it but can chnge value later 
+//static variable can be passed from one object to another(it is common for all)
+//its takes memory only once for the class ..declarated outside the class  
+//not the property of objects ..it is propeerty of class
+
+33. static function 
+//it can only access static members(variable or methods)
+//static function can be called by only class name
+
+
+/* inheritance
+
+-> part of OOPs
+-> used for reusability ..in c++, we can reuse a class and add additional feathers to it 
+-> reusing already tested and debugged class saves efforts of developing and debugging the same thing 
+-> //base class //derived class
+
+--->forms of inheritance 
+  ->single inheritance ..a derived class from a base class
+  ->multiple inheritance ..a derived class from more than one base class
+  ->Hierarchical inheritance ..several derived classes from single base classes 
+  ->multilevel inheritance ..deriving a class from already derived class
+  ->hybrid inheritance ..a combination of multiple and multilevel inheritance
+
+/*        
+                    public derivation      private derivation      protected derivation
+private members       not inherited           not inherited           not inherited
+protected members      protected               private                   protected
+public members         public                  private                   protected
+*/ 
+
+34. virtual base class --> prevent data duplication and ambiguity         A
+syntax :                                                                __!__
+  class B : virtual visibility_mode A{                                 !     !
+                                                                       B     C
+  };                                                                   !_____!
+ class C : virtual visibility_mode B{                                     !
+                                                                          D
+ };
+if base class A as any member "a" ...then "a" is inherited to both B and C ....then again "a" would be inherited to D two times and that
+ create ambiguity ...to prevent this ...virtual base class is made
+
